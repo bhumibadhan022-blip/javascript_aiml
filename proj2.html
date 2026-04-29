@@ -1,0 +1,130 @@
+<html>
+<head><title>Events Demo</title></head>
+<body style="font-family:sans-serif;padding:24px;background:#f8f9fa">
+
+  <h2>Event Handling Demo</h2>
+
+  <!-- Mouse event -->
+  <button onclick="handleClick()"
+    style="padding:8px 18px;background:#f7df1e;border:none;border-radius:6px;
+           cursor:pointer;font-weight:700;font-size:1rem">
+    Click Me
+  </button>
+
+  <!-- Keyboard event -->
+  <input type="text" onkeyup="handleKey(event)"
+    placeholder="Type something..."
+    style="display:block;margin:12px 0;padding:8px 12px;
+           border:1px solid #ccc;border-radius:6px;font-size:1rem;width:240px">
+
+  <!-- Form event -->
+  <form onsubmit="handleSubmit(event)"
+    style="display:flex;gap:8px;align-items:center">
+    <input id="nameIn" type="text" placeholder="Enter name"
+      style="padding:8px 12px;border:1px solid #ccc;border-radius:6px;
+             font-size:1rem;width:180px">
+    <button type="submit"
+      style="padding:8px 18px;background:#4ade80;border:none;border-radius:6px;
+             cursor:pointer;font-weight:700;font-size:1rem">
+      Submit
+    </button>
+  </form>
+
+  <div id="log"
+    style="margin-top:16px;font-family:monospace;font-size:0.9rem;
+           background:#1e1e2e;color:#cdd6f4;border-radius:8px;padding:14px;
+           min-height:60px;line-height:2">
+    Waiting for events...
+  </div>
+
+  <script>
+    let logEl = document.getElementById("log");
+
+    function addLog(msg) {
+      logEl.innerHTML = msg + "<br>" + logEl.innerHTML;
+    }
+
+    function handleClick() {
+      addLog("🖱 Mouse: button clicked");
+    }
+
+    function handleKey(event) {
+      addLog("⌨ Key up: [" + event.key + "]  value: "" + event.target.value + """);
+    }
+
+    function handleSubmit(event) {
+      event.preventDefault();
+      let name = document.getElementById("nameIn").value.trim();
+      addLog("📋 Form submitted: " + (name || "(empty)"));
+    }
+  </script>
+
+</body>
+</html>
+
+
+<input type ="text" id="textInput">
+<script>
+    let inputField = document.getElementById("textInput");
+    inputField.addEventListener("keydown", function() {
+        console.log("Key down event detected!");
+    });
+    inputField.addEventListener("keyup", function() {
+        console.log("Key was released");
+    });
+
+</script>
+
+
+
+<input type=" "text" onfocus="gotFocus()" onblur="lostFocus()">
+       placeholder="Enter your name"
+
+<script>
+    function gotFocus() {
+        console.log("Input got focus");
+    }
+    function lostFocus() {
+        console.log("Input lost focus");
+    }
+
+</script>
+
+
+
+inputField.addEventListener("focus", function() {
+    inputField.style.backgroundColor = "lightyellow";
+});
+inputField.addEventListener("blur", function() {
+    inputField.style.backgroundColor = "";
+});
+
+
+<p id="hoverArea" style="width:200px;height:100px;background:#e0e0e0;
+                       display:flex;align-items:center;justify-content:center;
+                       border-radius:8px;cursor:pointer">
+  Hover over me!</p>
+<script>
+    let hoverArea = document.getElementById("hoverArea");
+    hoverArea.addEventListener("mouseover", function() {
+        hoverArea.style.backgroundColor = "#f7df1e";
+        hoverArea.textContent = "Mouse is over!";
+    });
+    hoverArea.addEventListener("mouseout", function() {
+        hoverArea.style.backgroundColor = "#e0e0e0";
+        hoverArea.textContent = "Hover over me!";
+    });
+</script>
+
+
+<script>
+    let pragraph = document.getElementById("hoverParagraph");
+    pragraph.addEventListener("mouseover", function() {
+        pragraph.style.backgroundColor = "#blue";
+        pragraph.textContent = "Mouse is over!";
+    });
+    pragraph.addEventListener("mouseout", function() {
+        pragraph.style.backgroundColor = "black";
+        pragraph.textContent = "Hover over me!";
+    });
+</script>

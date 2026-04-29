@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Click the bulb to toggle ON/OFF</h2>
+    <img id="bulb" src="https://www.w3schools.com/js/pic_bulboff.gif" alt="Bulb" style="width:100px;cursor:pointer;" onclick="toggleBulb()">
+    <div class="status" id="bulbStatus">Bulb is OFF</div>
+
+    <script>
+        let isBulbOn = false;
+
+        function toggleBulb() {
+            const bulb = document.getElementById("bulb");
+            const status = document.getElementById("bulbStatus");
+
+            if (isBulbOn) {
+                bulb.src = "https://www.w3schools.com/js/pic_bulboff.gif";
+                status.textContent = "Bulb is OFF";
+                isBulbOn = false;
+            } else {
+                bulb.src = "https://www.w3schools.com/js/pic_bulbon.gif";
+                status.textContent = "Bulb is ON";
+                isBulbOn = true;
+            }
+        }
+    </script>
+    
+</body>
+</html>
