@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<button onclick="addImg()">Add Image</button>
+<button onclick="resizeImg()">Resize</button>
+<button onclick="deleteImg()">Delete</button>
+
+<div id="container"></div>
+
+<script>
+let img;
+
+function addImg() {
+    img = document.createElement("img");
+    img.src = "lily.jpg";
+    document.getElementById("container").appendChild(img);
+}
+
+function resizeImg() {
+    if (img) {
+        img.style.width = "300px";
+        img.style.height = "200px";
+    }
+}
+
+function deleteImg() {
+    if (img) {
+        img.remove();
+        img = null;
+    }
+}
+</script>
+
+</body>
+</html>

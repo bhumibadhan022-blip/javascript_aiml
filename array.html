@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+</head>
+<body>
+    <hr>
+    <center>
+        <h1><tt>Welcome to Javascript</tt></h1>
+    </center>
+    </hr>
+    <script>
+        var Product_Info=[1001,"mobile",29000,"samsung"]
+        document.write("Product_Details are:"+Product_Info)
+        document.write("<br>")
+        window.alert("Product_Details:"+Product_Info);
+        // document.write("Product_Details are:"+Product_Info[0],"<br>",Product_Info[1],"<br>",Product_Info[2],"<br>",Product_Info[3]) //how to access array elements
+        // document.write("<br>")
+        // Product_Info[1]="TV"
+        // document.write("Product_Details are:"+Product_Info)
+        // document.write("<br>")
+        // Product_Info[4]="LED"
+        // document.write("Product_Details are:"+Product_Info)
+        // document.write("<br>")
+        // document.write("The length of array is:"+Product_Info.length) // to find the length of array
+        // Product_Info.push(25000)
+        // document.write("Updated array is:"+Product_Info)
+        // document.write("<br>") //add elements in the last
+        // Product_Info.pop
+        // document.write("last element array is removed nd new array is:"+Product_Info)
+        // document.write("<br>") //remove elements from last
+        // Product_Info.unshift("bullet") //
+        // document.write("updated array is:"+Product_Info)
+        // document.write("<br>") 
+        // Product_Info.shift("bullet") //
+        // document.write("updated array is:"+Product_Info)
+        // document.write("<br>") 
+        document.write("index of 29000:"+Product_Info.indexOf(29000))
+        console.log(Product_Info.indecOf(29000))
+        document.write("<br>")
+        document.write("index of 49000:"+Product_Info.indexOf(49000))
+        console.log(Product_Info.indecOf(49000))
+        document.write("<br>")
+        document.write("slicing in js:"+Product_Info.slice(0,3))
+        document.write("<br>")
+        document.write("slicing",Product_Info.slice())
+    </script>
+</body>
+</html>

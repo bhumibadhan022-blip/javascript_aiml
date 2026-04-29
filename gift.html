@@ -1,0 +1,124 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pop Gift Box</title>
+
+<style>
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f0f3f7;
+  font-family: Arial, sans-serif;
+}
+
+.gift-container {
+  position: relative;
+  cursor: pointer;
+}
+
+/* Box */
+.box {
+  width: 150px;
+  height: 150px;
+  background: #ff4d4d;
+  border-radius: 10px;
+  position: relative;
+}
+
+/* Lid */
+.lid {
+  width: 150px;
+  height: 40px;
+  background: #cc0000;
+  position: absolute;
+  top: -40px;
+  left: 0;
+  border-radius: 10px 10px 0 0;
+  transform-origin: bottom;
+  transition: transform 0.5s ease;
+}
+
+/* Ribbon */
+.ribbon-v {
+  width: 20px;
+  height: 150px;
+  background: gold;
+  position: absolute;
+  left: 65px;
+}
+
+.ribbon-h {
+  width: 150px;
+  height: 20px;
+  background: gold;
+  position: absolute;
+  top: 65px;
+}
+
+/* Surprise */
+.surprise {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+  text-align: center;
+  transition: all 0.6s ease;
+}
+
+/* Gift Emoji */
+.gift {
+  font-size: 50px;
+}
+
+/* Message */
+.message {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #333;
+  opacity: 0;
+  transition: opacity 0.5s ease 0.3s;
+}
+
+/* OPEN STATE */
+.open .lid {
+  transform: rotate(-120deg);
+}
+
+.open .surprise {
+  bottom: 160px;
+  transform: translateX(-50%) scale(1);
+}
+
+.open .message {
+  opacity: 1;
+}
+</style>
+
+</head>
+<body>
+
+<div class="gift-container" onclick="openGift(this)">
+  <div class="lid"></div>
+
+  <div class="box">
+    <div class="ribbon-v"></div>
+    <div class="ribbon-h"></div>
+  </div>
+
+  <div class="surprise">
+    <div class="gift">🎁✨</div>
+    <div class="message">Surprise! You are awesome 🎉</div>
+  </div>
+</div>
+
+<script>
+function openGift(el) {
+  el.classList.toggle("open");
+}
+</script>
+
+</body>
+</html>
